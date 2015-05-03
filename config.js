@@ -8,8 +8,9 @@ if(process.env.PORT && process.env.C9_HOSTNAME){
 	HOSTNAME = process.env.C9_HOSTNAME;
 }
 //codio Configuration (https://codio.com/)
-if(require('os') && require('os').hostname()){
-    HOSTNAME = require('os').hostname()+ '.codio.io'
+if(process.env.CODIO_BOX_DOMAIN){
+    //http://forum.codio.com/t/please-export-hostname-environment-variable/1607
+    HOSTNAME = process.env.CODIO_BOX_DOMAIN;
 }
 
 module.exports = {
