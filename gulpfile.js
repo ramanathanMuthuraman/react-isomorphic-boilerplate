@@ -9,6 +9,8 @@ var source = require('vinyl-source-stream');
 var reactify = require('reactify');
 var server = require('./server');
 var config = require('./config')
+var pm2 = require('pm2');
+
 gulp.task('js', function() {
       return  browserify('./public/app.js')
     	//parse the jsx to js
@@ -47,22 +49,27 @@ gulp.task('html',function() {
 });
 
 
-gulp.task('build',function () { 
-   runSequence('clean',['js'],'less','fonts','html','browser-sync','server');
+gulp.task('default',function () { 
+   runSequence('clean',['js'],'less','fonts','browser-sync');
    gulp.watch('./public/**/*.js',['js']);
    gulp.watch('./public/**/*.less',['less']); 
    gulp.watch('./public/index.html',['html']);
 });
 
-gulp.task('default',function () { 
-   runSequence('clean',['js'],'less','fonts','browser-sync','server');
+gulp.task('build',function () { 
+   runSequence('clean',['js'],'less','fonts','pm2');
    gulp.watch('./public/**/*.js',['js']);
    gulp.watch('./public/**/*.less',['less']); 
 });
 
-gulp.task('server', function() {
-  server.listen(config.PORT);
+
+
+gulp.task('pm2',function() {
+    pm2.connect(function(){
+    pm2.start("server.js","server");
+  });
 });
+
 
 // Rerun the task when a file changes
 gulp.task('browser-sync', function() {
