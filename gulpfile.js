@@ -47,14 +47,14 @@ gulp.task('html',function() {
 });
 
 
-gulp.task('default',function () { 
+gulp.task('build',function () { 
    runSequence('clean',['js'],'less','fonts','html','browser-sync','server');
    gulp.watch('./public/**/*.js',['js']);
    gulp.watch('./public/**/*.less',['less']); 
    gulp.watch('./public/index.html',['html']);
 });
 
-gulp.task('build',function () { 
+gulp.task('default',function () { 
    runSequence('clean',['js'],'less','fonts','browser-sync','server');
    gulp.watch('./public/**/*.js',['js']);
    gulp.watch('./public/**/*.less',['less']); 

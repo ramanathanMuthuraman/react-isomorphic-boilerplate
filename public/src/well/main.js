@@ -13,7 +13,7 @@ var Button = require('react-bootstrap').Button;
       						This is a react boilerpate exhibiting isomorphic javascript feature. 
       					</p>
       					<p>
-      					<Button bsStyle='primary'>Learn more</Button>
+      					<Button bsStyle='link'><a target="blank" href="https://github.com/ramanathanMuthuraman/react-isomorphic-boilerplate">Learn more</a></Button>
       					</p>
       					</div>
       				</Col>
