@@ -48,14 +48,21 @@ gulp.task('html',function() {
       .pipe(reload({stream: true}));
 });
 
-
+//server side rendering task
 gulp.task('default',function () { 
    runSequence('clean',['js'],'less','fonts','browser-sync');
    gulp.watch('./public/**/*.js',['js']);
    gulp.watch('./public/**/*.less',['less']); 
    gulp.watch('./public/index.html',['html']);
 });
-
+//client side rendering task
+gulp.task('client',function () { 
+   runSequence('clean',['js'],'less','fonts','html','browser-sync');
+   gulp.watch('./public/**/*.js',['js']);
+   gulp.watch('./public/**/*.less',['less']); 
+   gulp.watch('./public/index.html',['html']);
+});
+//run server indefinitely task
 gulp.task('build',function () { 
    runSequence('clean',['js'],'less','fonts','pm2');
    gulp.watch('./public/**/*.js',['js']);
