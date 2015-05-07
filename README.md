@@ -13,6 +13,6 @@ Performance and SEO.. SPA has always problems with lags in initial page load and
 
 ```
 npm install
-'''
 
+```
 
