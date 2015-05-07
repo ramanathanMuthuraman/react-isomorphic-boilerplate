@@ -11,7 +11,7 @@ Performance and SEO.. SPA has always problems with lags in initial page load and
 
 # Installation
 
-Downlaod the repo and navigate to the root folder in the command prompt, execute the below command, to get the dependencies installed
+Downlaod the repo and navigate to the root folder and install the dependencies
 
 ```
 npm install
@@ -20,7 +20,7 @@ npm install
 
 # Running
 
-To run the boilerplate, execute the below command in the command prompt
+The task runner executes the default task to run the boilerplate code
 
 ```
 gulp
