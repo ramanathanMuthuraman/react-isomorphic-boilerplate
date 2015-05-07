@@ -8,8 +8,6 @@
 * [Gulp](http://gulpjs.com/)
 
 
-React JS, React-Bootstrap, React-Router, Express JS, Browserify, Browser-sync, Gulp.
-
 With the advent of node, JavaScript took a quantum jump. With node <a href="http://cylonjs.com/">robotics(Cylon JS)</a>, <a href="https://github.com/rwaldron/johnny-five">Internet of Things(johnny-five)</a>, blah blah... almost everything became possible in JavaScript. One such happening feature is  isomorphic JavaScript. 
 
 # What is Isomorphic JS?
